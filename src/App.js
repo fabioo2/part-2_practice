@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Note from './components/Note';
 import Notification from './components/Notification';
 import Footer from './components/Footer';
+import LoginForm from './components/LoginForm';
+
 import noteService from './services/notes';
 
 const App = () => {
@@ -12,6 +14,8 @@ const App = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const [loginVisible, setLoginVisible] = useState(false);
 
     useEffect(() => {
         noteService.getAll().then((initialNotes) => {
